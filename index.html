@@ -16,12 +16,6 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Prototype 3</div>
-      </div>
     </div>
     <script>
       var container = document.querySelector("#unity-container");
@@ -58,9 +52,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/HTML.loader.js";
       var config = {
-        dataUrl: buildUrl + "/HTML.data.br",
-        frameworkUrl: buildUrl + "/HTML.framework.js.br",
-        codeUrl: buildUrl + "/HTML.wasm.br",
+        dataUrl: buildUrl + "/HTML.data",
+        frameworkUrl: buildUrl + "/HTML.framework.js",
+        codeUrl: buildUrl + "/HTML.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Prototype 3",
@@ -95,8 +89,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "1920px";
-        canvas.style.height = "1080px";
+        canvas.style.width = "90";
+        canvas.style.height = "90";
       }
 
       loadingBar.style.display = "block";
@@ -108,9 +102,6 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
         }).catch((message) => {
           alert(message);
         });
