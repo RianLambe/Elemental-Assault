@@ -12,7 +12,7 @@ public static class GameManager
     public static Card player1Card;
     public static Card Player2Card;
     public static List<GameObject> playedCards = new List<GameObject>();
-    public static bool easyMode = false;
+    public static bool easyMode = true;
     public static int player1RoundWins;
     public static int player2RoundWins;
 
